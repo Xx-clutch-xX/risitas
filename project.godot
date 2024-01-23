@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="Risitas"
+run/main_scene="res://Scenes/main_map.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://je.png"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://Localization/Localization.en.translation", "res://Localization/Localization.es.translation")
 
 [rendering]
 
