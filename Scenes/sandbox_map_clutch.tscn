@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://bbtnfdsucfpo2"]
+[gd_scene load_steps=5 format=3 uid="uid://bbtnfdsucfpo2"]
+
+[ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_k8l5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgx18"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ny7k"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Environment" id="Environment_3prbn"]
 
 [node name="SandboxMapClutch" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_vgx18")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_4ny7k")
+
+[node name="AbuelitaController" parent="." instance=ExtResource("1_k8l5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56161, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3prbn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
