@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq0hkjb5cfmuk"]
+
+[ext_resource type="PackedScene" uid="uid://mnke2mydgdq2" path="res://Assets/3D/waria.glb" id="1_uq3al"]
+[ext_resource type="Script" path="res://addons/jigglebones/jigglebone.gd" id="2_bp1ag"]
+
+[node name="waria" instance=ExtResource("1_uq3al")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-0.204832, -3.26671e-14, -4.88357e-08, 0.978797)
+bones/2/rotation = Quaternion(-0.087456, -0.121873, -0.803266, 0.576422)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(2.54703e-10, 1.37398e-07, -0.00185377, 0.999998)
+bones/4/rotation = Quaternion(0.838594, 0.204833, -0.139547, 0.485108)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0874562, 0.121873, 0.803266, 0.576422)
+bones/6/rotation = Quaternion(-1.10579e-08, -1.82817e-07, 0.00185375, 0.999998)
+bones/7/rotation = Quaternion(0.838594, -0.204833, 0.139547, 0.485108)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.707107, -6.04412e-08, -0.707107, -6.04411e-08)
+bones/9/rotation = Quaternion(0.707107, 6.04412e-08, 0.707107, -6.04411e-08)
+
+[node name="boob_l" type="Node3D" parent="Armature/Skeleton3D" index="18"]
+transform = Transform3D(0.872074, 0.488996, -0.0192301, 0.178153, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156626, -0.082259, 0.17775)
+top_level = true
+script = ExtResource("2_bp1ag")
+bone_name = "Boob.L"
+stiffness = 0.3
+use_gravity = true
+forward_axis = 2
+
+[node name="boob_r" type="Node3D" parent="Armature/Skeleton3D" index="19"]
+transform = Transform3D(0.872074, -0.488996, 0.0192299, -0.178153, -0.353825, -0.918188, 0.455794, 0.797302, -0.395678, -0.156626, -0.0822589, 0.17775)
+top_level = true
+script = ExtResource("2_bp1ag")
+bone_name = "Boob.R"
+stiffness = 0.3
+use_gravity = true
+forward_axis = 2
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "running"

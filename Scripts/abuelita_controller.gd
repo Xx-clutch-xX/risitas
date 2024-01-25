@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var speed:= 2.0
+@export var rotation_speed:= 10.0
 @export var jump_strength:= 4.0
 @export var gravity:= 30.0
 @export var _model: Node3D
@@ -33,8 +34,8 @@ func _physics_process(delta):
 	var look_direction = Vector2(velocity.z, velocity.x)
 
 	if velocity.length() > 1 and look_direction != Vector2.ZERO:
-		_model.rotation.y = look_direction.angle()
+		_model.rotation.y = lerp_angle(_model.rotation.y, look_direction.angle(), delta * rotation_speed)
 
 
 func _process(_delta):
-	_spring_arm.position = position
+	_spring_arm.position = Vector3(position.x, position.y + 1, position.z)

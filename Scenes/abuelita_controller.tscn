@@ -1,37 +1,47 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba3hriud2d4if"]
+[gd_scene load_steps=6 format=3 uid="uid://ba3hriud2d4if"]
 
 [ext_resource type="Script" path="res://Scripts/abuelita_controller.gd" id="1_qc7l4"]
+[ext_resource type="PackedScene" uid="uid://bq0hkjb5cfmuk" path="res://Scenes/waria.tscn" id="2_pjh17"]
 [ext_resource type="Script" path="res://Scripts/CameraJoint.gd" id="2_tqber"]
-[ext_resource type="Texture2D" uid="uid://c3aw78uumupaa" path="res://je.png" id="3_t76mf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykb1g"]
-height = 1.5
+height = 1.885
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_j7j4d"]
-height = 1.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cmtg"]
-albedo_texture = ExtResource("3_t76mf")
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ohjtk"]
+height = 0.530409
+radius = 0.667092
 
 [node name="AbuelitaController" type="CharacterBody3D" node_paths=PackedStringArray("_model", "_spring_arm")]
 script = ExtResource("1_qc7l4")
-_model = NodePath("Model")
+_model = NodePath("waria")
 _spring_arm = NodePath("CameraJoint")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ykb1g")
 
-[node name="Model" type="Node3D" parent="."]
+[node name="waria" parent="." instance=ExtResource("2_pjh17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.943118, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
-mesh = SubResource("CapsuleMesh_j7j4d")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_7cmtg")
+[node name="boob_l" parent="waria/Armature/Skeleton3D" index="18"]
+transform = Transform3D(0.872074, 0.488996, -0.0192303, 0.178153, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156625, -1.02538, 0.177751)
+
+[node name="boob_r" parent="waria/Armature/Skeleton3D" index="19"]
+transform = Transform3D(0.872074, -0.488996, 0.0192302, -0.178153, -0.353825, -0.918187, 0.455794, 0.797302, -0.395678, -0.156625, -1.02538, 0.177751)
 
 [node name="CameraJoint" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.906956, 0.421226, 0, -0.421226, 0.906956, 0, 1.38571, 0)
-spring_length = 3.0
+transform = Transform3D(1, 0, 0, 0, 0.953391, 0.301738, 0, -0.301738, 0.953391, 0, -0.329603, 0)
+spring_length = 5.0
 script = ExtResource("2_tqber")
 mouse_sensitivity = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="CameraJoint"]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.642859, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_ohjtk")
+
+[editable path="waria"]
