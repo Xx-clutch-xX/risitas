@@ -1,3 +1,111 @@
-[gd_scene format=3 uid="uid://bux5kl6acu5sl"]
+[gd_scene load_steps=12 format=3 uid="uid://bux5kl6acu5sl"]
+
+[ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_mlodv"]
+[ext_resource type="Script" path="res://Scripts/TalkingElement.gd" id="2_u3oaq"]
+[ext_resource type="Resource" uid="uid://dv2oilvxa7cb8" path="res://Assets/Textos/texto_prueba_01.tres" id="3_qg05s"]
+[ext_resource type="PackedScene" uid="uid://dxv01sofsh45v" path="res://Scenes/cascara.tscn" id="4_p24k6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lmen"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5tfhp"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkvch"]
+
+[sub_resource type="Sky" id="Sky_nrg5n"]
+sky_material = SubResource("ProceduralSkyMaterial_qkvch")
+
+[sub_resource type="Environment" id="Environment_mwa3h"]
+background_mode = 2
+background_energy_multiplier = 1.56
+sky = SubResource("Sky_nrg5n")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1jni0"]
+height = 1.27565
+radius = 1.22623
+
+[sub_resource type="BoxMesh" id="BoxMesh_j51dm"]
 
 [node name="SandboxMapSaul" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_0lmen")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_5tfhp")
+
+[node name="AbuelitaController" parent="." instance=ExtResource("1_mlodv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56161, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mwa3h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
+light_cull_mask = 4294967293
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
+
+[node name="TalkingElement" type="Node" parent="Node3D"]
+script = ExtResource("2_u3oaq")
+text_resource = ExtResource("3_qg05s")
+
+[node name="Area3D" type="Area3D" parent="Node3D/TalkingElement"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/TalkingElement/Area3D"]
+shape = SubResource("CylinderShape3D_1jni0")
+
+[node name="Control" type="Control" parent="Node3D/TalkingElement"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Node3D/TalkingElement/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -131.0
+offset_right = 303.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node3D/TalkingElement/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -303.0
+offset_top = -126.0
+offset_right = 303.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center] HOLA"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("BoxMesh_j51dm")
+
+[node name="Cascara" parent="." instance=ExtResource("4_p24k6")]
+transform = Transform3D(0.244487, 0, 0, 0, 0.139863, 0, 0, 0, 0.302972, 0, 0.560402, 2.94511)
+
+[node name="Cascara2" parent="." instance=ExtResource("4_p24k6")]
+transform = Transform3D(0.113587, 0, 0.268289, 0, 0.139863, 0, -0.216499, 0, 0.140759, 2.55732, 0.537552, 1.22179)
+
+[node name="Cascara3" parent="." instance=ExtResource("4_p24k6")]
+transform = Transform3D(0.133958, 0, -0.253447, 0, 0.139863, 0, 0.204522, 0, 0.166002, -2.53465, 0.552902, 2.07376)
