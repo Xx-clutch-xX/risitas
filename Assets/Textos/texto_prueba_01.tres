@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TextArrResource" load_steps=2 format=3 uid="uid://dv2oilvxa7cb8"]
+
+[ext_resource type="Script" path="res://Scripts/TextArrResource.gd" id="1_shbv2"]
+
+[resource]
+script = ExtResource("1_shbv2")
+key_names = Array[String](["KEY 01", "KEY 23", "KEY 293", "KEY 21934"])

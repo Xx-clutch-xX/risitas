@@ -1,18 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba3hriud2d4if"]
+[gd_scene load_steps=12 format=3 uid="uid://ba3hriud2d4if"]
 
 [ext_resource type="Script" path="res://Scripts/abuelita_controller.gd" id="1_qc7l4"]
 [ext_resource type="PackedScene" uid="uid://bq0hkjb5cfmuk" path="res://Scenes/waria.tscn" id="2_pjh17"]
 [ext_resource type="Script" path="res://Scripts/CameraJoint.gd" id="2_tqber"]
+[ext_resource type="Material" uid="uid://iti8wslyl3n0" path="res://Assets/Materiales/pixel_material.tres" id="4_utmeo"]
+[ext_resource type="Script" path="res://Scripts/StateMachine.gd" id="5_wrc37"]
+[ext_resource type="Script" path="res://Scripts/Idle.gd" id="6_gw4l8"]
+[ext_resource type="Script" path="res://Scripts/Run.gd" id="7_l5f1f"]
+[ext_resource type="Script" path="res://Scripts/Jump.gd" id="8_j2irw"]
+[ext_resource type="Script" path="res://Scripts/Talk.gd" id="9_tgdel"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ykb1g"]
 height = 1.885
 
-[node name="AbuelitaController" type="CharacterBody3D" node_paths=PackedStringArray("_model", "_spring_arm")]
+[sub_resource type="PlaneMesh" id="PlaneMesh_wwp4b"]
+material = ExtResource("4_utmeo")
+
+[node name="AbuelitaController" type="CharacterBody3D" node_paths=PackedStringArray("_model", "_spring_arm", "_anim_tree")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_qc7l4")
 _model = NodePath("waria")
 _spring_arm = NodePath("CameraJoint")
+_anim_tree = NodePath("waria/AnimationTree")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ykb1g")
@@ -20,11 +30,17 @@ shape = SubResource("CapsuleShape3D_ykb1g")
 [node name="waria" parent="." instance=ExtResource("2_pjh17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.943118, 0)
 
+[node name="Skeleton3D" parent="waria/Armature" index="0"]
+bones/0/position = Vector3(-7.05687e-10, 0.493585, -0.139333)
+bones/1/rotation = Quaternion(-0.175337, 1.10178e-09, -3.65386e-08, 0.984508)
+bones/2/rotation = Quaternion(-0.0108033, -0.149465, -0.91438, 0.376101)
+bones/5/rotation = Quaternion(-0.0108037, 0.149465, 0.91438, 0.376102)
+
 [node name="boob_l" parent="waria/Armature/Skeleton3D" index="18"]
-transform = Transform3D(0.872074, 0.488996, -0.0192305, 0.178152, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156626, -1.02538, 0.177751)
+transform = Transform3D(0.872074, 0.488996, -0.0192301, 0.178153, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156626, -1.02347, 0.17775)
 
 [node name="boob_r" parent="waria/Armature/Skeleton3D" index="19"]
-transform = Transform3D(0.872074, -0.488996, 0.0192304, -0.178152, -0.353826, -0.918188, 0.455794, 0.797302, -0.395678, -0.156626, -1.02538, 0.177751)
+transform = Transform3D(0.872074, -0.488996, 0.01923, -0.178153, -0.353826, -0.918187, 0.455794, 0.797302, -0.395678, -0.156626, -1.02347, 0.17775)
 
 [node name="CameraJoint" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.953391, 0.301738, 0, -0.301738, 0.953391, 0, -0.329603, 0)
@@ -33,5 +49,26 @@ script = ExtResource("2_tqber")
 mouse_sensitivity = 0.1
 
 [node name="Camera3D" type="Camera3D" parent="CameraJoint"]
+
+[node name="pixelation" type="MeshInstance3D" parent="CameraJoint/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.620039, -0.784571, 0, 0.784571, 0.620039, 0, -8.9407e-08, -0.417901)
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_wwp4b")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("5_wrc37")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_gw4l8")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("7_l5f1f")
+
+[node name="Jump" type="Node" parent="StateMachine"]
+script = ExtResource("8_j2irw")
+
+[node name="Talk" type="Node" parent="StateMachine"]
+script = ExtResource("9_tgdel")
 
 [editable path="waria"]
