@@ -18,6 +18,7 @@ config/icon="res://je.png"
 [autoload]
 
 Events="*res://Scripts/Events.gd"
+Functions="*res://Scripts/Functions.gd"
 
 [display]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbtnfdsucfpo2"]
+[gd_scene load_steps=12 format=3 uid="uid://bbtnfdsucfpo2"]
 
 [ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_k8l5f"]
 [ext_resource type="Script" path="res://Scripts/TalkingElement.gd" id="2_x0441"]
 [ext_resource type="Resource" uid="uid://dv2oilvxa7cb8" path="res://Assets/Textos/texto_prueba_01.tres" id="3_jnb3q"]
+[ext_resource type="Texture2D" uid="uid://tfjeomb8hi5w" path="res://Assets/Imagenes/texto_prueba.png" id="4_1fn73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgx18"]
 size = Vector3(10, 1, 10)
@@ -60,15 +61,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
 shape = SubResource("CylinderShape3D_3de11")
 
 [node name="Control" type="Control" parent="Node3D/TalkingElement"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="Node3D/TalkingElement/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -83,6 +85,7 @@ grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Node3D/TalkingElement/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -95,7 +98,23 @@ offset_right = 303.0
 grow_horizontal = 2
 grow_vertical = 0
 bbcode_enabled = true
-text = "[center] HOLA"
+
+[node name="TextureRect" type="TextureRect" parent="Node3D/TalkingElement/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -311.0
+offset_right = 350.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_1fn73")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
 mesh = SubResource("BoxMesh_ajuvf")

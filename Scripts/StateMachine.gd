@@ -55,4 +55,4 @@ func start_talk():
 	transition_to("Talk")
 
 func stop_talk():
-	transition_to("Idle")
+	transition_to("Idle", {from_talk=true})
