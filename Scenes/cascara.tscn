@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxv01sofsh45v"]
+
+[ext_resource type="Script" path="res://Scripts/Cascara.gd" id="1_4i5dk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o5i3i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8gwt"]
+
+[node name="Cascara" type="Node3D"]
+transform = Transform3D(0.244487, 0, 0, 0, 0.139863, 0, 0, 0, 0.302972, 0, 0.0737901, 0.00276268)
+script = ExtResource("1_4i5dk")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_o5i3i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_h8gwt")
