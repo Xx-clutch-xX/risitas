@@ -17,6 +17,7 @@ func _ready() -> void:
 	await(owner.ready)
 	Events.connect("startTalking", start_talk)
 	Events.connect("stopTalking", stop_talk)
+	Events.connect("fractura", fractura)
 	# The state machine assigns itself to the State objects' state_machine property.
 	for child in get_children():
 		child.state_machine = self
@@ -56,3 +57,6 @@ func start_talk():
 
 func stop_talk():
 	transition_to("Idle", {from_talk=true})
+
+func fractura():
+	transition_to("Fractura")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbtnfdsucfpo2"]
+[gd_scene load_steps=10 format=3 uid="uid://bbtnfdsucfpo2"]
 
 [ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_k8l5f"]
-[ext_resource type="Script" path="res://Scripts/TalkingElement.gd" id="2_x0441"]
-[ext_resource type="Resource" uid="uid://dv2oilvxa7cb8" path="res://Assets/Textos/texto_prueba_01.tres" id="3_jnb3q"]
-[ext_resource type="Texture2D" uid="uid://tfjeomb8hi5w" path="res://Assets/Imagenes/texto_prueba.png" id="4_1fn73"]
+[ext_resource type="PackedScene" uid="uid://bd3loqo1mp8n" path="res://Scenes/talking_element.tscn" id="2_brpah"]
+[ext_resource type="PackedScene" uid="uid://dxv01sofsh45v" path="res://Scenes/cascara.tscn" id="5_mengn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgx18"]
 size = Vector3(10, 1, 10)
@@ -20,10 +19,6 @@ sky_material = SubResource("ProceduralSkyMaterial_jxugv")
 background_mode = 2
 background_energy_multiplier = 1.56
 sky = SubResource("Sky_nrg5n")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_3de11"]
-height = 1.27565
-radius = 1.22623
 
 [sub_resource type="BoxMesh" id="BoxMesh_ajuvf"]
 
@@ -50,71 +45,18 @@ light_cull_mask = 4294967293
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
 
-[node name="TalkingElement" type="Node" parent="Node3D"]
-script = ExtResource("2_x0441")
-text_resource = ExtResource("3_jnb3q")
+[node name="TalkingElement" parent="Node3D" instance=ExtResource("2_brpah")]
 
-[node name="Area3D" type="Area3D" parent="Node3D/TalkingElement"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("BoxMesh_ajuvf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/TalkingElement/Area3D"]
-shape = SubResource("CylinderShape3D_3de11")
+[node name="Cascara" parent="." instance=ExtResource("5_mengn")]
+transform = Transform3D(0.244487, 0, 0, 0, 0.139863, 0, 0, 0, 0.302972, 0.395288, 0.5, 2.39871)
 
-[node name="Control" type="Control" parent="Node3D/TalkingElement"]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-
-[node name="ColorRect" type="ColorRect" parent="Node3D/TalkingElement/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -303.0
-offset_top = -131.0
-offset_right = 303.0
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0, 0, 0, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Node3D/TalkingElement/Control"]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -303.0
-offset_top = -126.0
-offset_right = 303.0
-grow_horizontal = 2
-grow_vertical = 0
-bbcode_enabled = true
-
-[node name="TextureRect" type="TextureRect" parent="Node3D/TalkingElement/Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -350.0
-offset_top = -311.0
-offset_right = 350.0
-offset_bottom = -10.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("4_1fn73")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-mesh = SubResource("BoxMesh_ajuvf")

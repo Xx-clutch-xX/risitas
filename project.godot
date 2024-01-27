@@ -22,8 +22,8 @@ Functions="*res://Scripts/Functions.gd"
 
 [display]
 
-window/size/viewport_width=900
-window/size/viewport_height=900
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0

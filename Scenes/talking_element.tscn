@@ -1,0 +1,184 @@
+[gd_scene load_steps=14 format=3 uid="uid://bd3loqo1mp8n"]
+
+[ext_resource type="Script" path="res://Scripts/TalkingElement.gd" id="1_km4pg"]
+[ext_resource type="Resource" uid="uid://dv2oilvxa7cb8" path="res://Assets/Textos/texto_prueba_01.tres" id="2_4kxs1"]
+[ext_resource type="Texture2D" uid="uid://cm4mkkgfqs5d2" path="res://Assets/Imagenes/text_box.png" id="3_5w6bx"]
+[ext_resource type="Theme" uid="uid://cxbs1v3rrfff4" path="res://Assets/Temas/Textbox.tres" id="4_p0inc"]
+[ext_resource type="Texture2D" uid="uid://d06j2xv4cytbi" path="res://Assets/Imagenes/text_rectangle.png" id="5_et146"]
+[ext_resource type="Theme" uid="uid://fdoc4pfglikv" path="res://Assets/Temas/TituloTextbox.tres" id="6_17dio"]
+[ext_resource type="Texture2D" uid="uid://bklhtbn8xj4ck" path="res://Assets/Iconos/next_arrow.png" id="7_ce680"]
+[ext_resource type="Script" path="res://Scripts/NextArrow.gd" id="8_je31r"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3de11"]
+height = 1.27565
+radius = 1.22623
+
+[sub_resource type="Animation" id="Animation_wnq8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlTextbox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 549)]
+}
+
+[sub_resource type="Animation" id="Animation_7rjqh"]
+resource_name = "appears"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlTextbox:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.287175, 0.203063),
+"update": 0,
+"values": [Vector2(0, 549), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h2lst"]
+resource_name = "dissappears"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlTextbox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.615572, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 549)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r3fjd"]
+_data = {
+"RESET": SubResource("Animation_wnq8u"),
+"appears": SubResource("Animation_7rjqh"),
+"dissappears": SubResource("Animation_h2lst")
+}
+
+[node name="TalkingElement" type="Node"]
+script = ExtResource("1_km4pg")
+text_resource = ExtResource("2_4kxs1")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_3de11")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ControlTextbox" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 549.0
+offset_right = 1920.0
+offset_bottom = 1629.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ControlTextbox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -366.0
+offset_right = 480.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_5w6bx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ControlTextbox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -264.0
+offset_right = 400.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_p0inc")
+bbcode_enabled = true
+text = "No se por qué haya tanta cáscara tirada..."
+
+[node name="TextNombre" type="TextureRect" parent="Control/ControlTextbox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -433.0
+offset_top = -397.0
+offset_right = 248.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_et146")
+
+[node name="Nombre" type="RichTextLabel" parent="Control/ControlTextbox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -372.0
+offset_right = 216.0
+offset_bottom = -317.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_17dio")
+bbcode_enabled = true
+text = "Sr. Cubo"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NextArrow" type="TextureRect" parent="Control/ControlTextbox"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 392.0
+offset_top = -327.0
+offset_right = 436.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_ce680")
+script = ExtResource("8_je31r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_r3fjd")
+}

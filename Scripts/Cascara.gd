@@ -12,4 +12,5 @@ func _process(delta):
 	pass
 
 func _body_entered(_body):
-	print('factura de cadera')
+	Events.emit_signal("fractura")
+	print('fractura de cadera')
