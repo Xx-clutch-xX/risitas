@@ -19,6 +19,7 @@ config/icon="res://je.png"
 
 Events="*res://Scripts/Events.gd"
 Functions="*res://Scripts/Functions.gd"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 

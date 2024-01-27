@@ -38,9 +38,9 @@ func _input(event):
 func trigger_text():
 	if inside_collision and !lock_chars:
 		
-		var current_text = text_resource.get_next_text()
+		var current_text = tr(text_resource.get_next_text())
 		
-		if current_text == null:
+		if current_text == '':
 			animation.play("dissappears")
 			text_label.text = ''
 			Events.emit_signal("stopTalking")

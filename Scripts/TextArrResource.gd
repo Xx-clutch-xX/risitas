@@ -12,4 +12,4 @@ func get_next_text():
 		return key_names[text_count]
 	else:
 		text_count = -1
-		return null
+		return ''

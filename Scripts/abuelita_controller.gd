@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var speed:= 2.0
 @export var rotation_speed:= 10.0
 @export var jump_strength:= 4.0
+@export var jump_distance:= 3.0
 @export var gravity:= 30.0
 @export var _lerp_val:= 50.0
 @export var _model: Node3D

@@ -4,6 +4,8 @@ extends State
 func enter(msg := {}) -> void:
 	owner._anim_tree.set("parameters/StateMachine/conditions/jump", true)
 	owner.velocity.y = owner.jump_strength
+	owner.velocity.x = owner.velocity.x * owner.jump_distance
+	owner.velocity.z = owner.velocity.z * owner.jump_distance
 	owner._snap_vector = Vector3.ZERO
 
 func physics_update(delta):

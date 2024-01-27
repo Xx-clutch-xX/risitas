@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_shbv2")
-key_names = Array[String](["hola", "ultimamente hay muchas cascaras en el piso", "recuerda tener cuidado", "nunca sabes cuando puedes ser la siguiente"])
+key_names = Array[String](["texto_prueba_01a", "texto_prueba_01b", "texto_prueba_01c", "texto_prueba_01d"])
 character_name = "Sr. Cubismo"

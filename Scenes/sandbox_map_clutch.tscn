@@ -25,11 +25,30 @@ sky = SubResource("Sky_nrg5n")
 [node name="SandboxMapClutch" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73404, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_vgx18")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_4ny7k")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55454, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_vgx18")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_4ny7k")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.987458, 0.157882, 0, -0.157882, 0.987458, 0, 0, 0, 1, -9.33143, 0.379033, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
+shape = SubResource("BoxShape3D_vgx18")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
 mesh = SubResource("BoxMesh_4ny7k")
 
 [node name="AbuelitaController" parent="." instance=ExtResource("1_k8l5f")]
@@ -52,11 +71,3 @@ mesh = SubResource("BoxMesh_ajuvf")
 
 [node name="Cascara" parent="." instance=ExtResource("5_mengn")]
 transform = Transform3D(0.244487, 0, 0, 0, 0.139863, 0, 0, 0, 0.302972, 0.395288, 0.5, 2.39871)
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
