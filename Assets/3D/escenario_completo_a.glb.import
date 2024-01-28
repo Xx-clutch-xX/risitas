@@ -1,0 +1,73 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://58ntdb5j3oor"
+path="res://.godot/imported/escenario_completo_a.glb-578b1e9790bae418035c1f297953a476.scn"
+
+[deps]
+
+source_file="res://Assets/3D/escenario_completo_a.glb"
+dest_files=["res://.godot/imported/escenario_completo_a.glb-578b1e9790bae418035c1f297953a476.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:cocina": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cuarto": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cuarto_002": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:cuartos": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:donquicon": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:enfermeria": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:oficina": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:patio": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:piscina": {
+"generate/physics": true,
+"physics/shape_type": 2
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

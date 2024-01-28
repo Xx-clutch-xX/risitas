@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwr8yuabk7c82"]
+
+[ext_resource type="PackedScene" uid="uid://58ntdb5j3oor" path="res://Assets/3D/escenario_completo_a.glb" id="1_kpg26"]
+
+[node name="escenario_completo_a" instance=ExtResource("1_kpg26")]

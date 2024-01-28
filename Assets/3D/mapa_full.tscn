@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://p4g3m2wn84c1"]
+
+[ext_resource type="PackedScene" uid="uid://bwr8yuabk7c82" path="res://Scenes/escenario_completo_a.tscn" id="1_8o3ph"]
+
+[node name="MapaFull" type="Node3D"]
+
+[node name="escenario_completo_a" parent="." instance=ExtResource("1_8o3ph")]

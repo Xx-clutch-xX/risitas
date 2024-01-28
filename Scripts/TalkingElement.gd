@@ -9,7 +9,6 @@ class_name TalkingElement
 
 @export var text_resource : TextArrResource
 
-
 var inside_collision = false
 var talking = false
 var lock_chars = false

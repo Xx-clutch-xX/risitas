@@ -1,14 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbtnfdsucfpo2"]
+[gd_scene load_steps=9 format=3 uid="uid://bbtnfdsucfpo2"]
 
 [ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_k8l5f"]
+[ext_resource type="PackedScene" uid="uid://bwr8yuabk7c82" path="res://Scenes/escenario_completo_a.tscn" id="1_q8q7v"]
 [ext_resource type="PackedScene" uid="uid://bd3loqo1mp8n" path="res://Scenes/talking_element.tscn" id="2_brpah"]
 [ext_resource type="PackedScene" uid="uid://dxv01sofsh45v" path="res://Scenes/cascara.tscn" id="5_mengn"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vgx18"]
-size = Vector3(10, 1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_4ny7k"]
-size = Vector3(10, 1, 10)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxugv"]
 
@@ -24,35 +19,10 @@ sky = SubResource("Sky_nrg5n")
 
 [node name="SandboxMapClutch" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73404, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_vgx18")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_4ny7k")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.55454, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("BoxShape3D_vgx18")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
-mesh = SubResource("BoxMesh_4ny7k")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(0.987458, 0.157882, 0, -0.157882, 0.987458, 0, 0, 0, 1, -9.33143, 0.379033, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-shape = SubResource("BoxShape3D_vgx18")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
-mesh = SubResource("BoxMesh_4ny7k")
+[node name="escenario_completo_a" parent="." instance=ExtResource("1_q8q7v")]
 
 [node name="AbuelitaController" parent="." instance=ExtResource("1_k8l5f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56161, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60766, 1.76593, -31.1176)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3prbn")
@@ -63,6 +33,7 @@ light_cull_mask = 4294967293
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
+visible = false
 
 [node name="TalkingElement" parent="Node3D" instance=ExtResource("2_brpah")]
 

@@ -589,25 +589,22 @@ shape = SubResource("CylinderShape3D_qqsux")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.943118, 0)
 
 [node name="Skeleton3D" parent="waria/Armature" index="0"]
-bones/0/position = Vector3(6.3746e-10, 0.484011, -0.139333)
-bones/1/rotation = Quaternion(-0.153516, -1.19007e-09, -4.22876e-08, 0.988146)
-bones/2/rotation = Quaternion(-0.00832748, -0.151386, -0.921188, 0.358364)
-bones/2/scale = Vector3(1, 1, 1)
+bones/0/position = Vector3(-1.34378e-09, 0.502608, -0.139333)
+bones/1/rotation = Quaternion(-0.190922, 1.52144e-09, -3.82489e-08, 0.981605)
+bones/2/rotation = Quaternion(-0.0124979, -0.148116, -0.909519, 0.388177)
 bones/3/rotation = Quaternion(0.128241, -0.0587322, -0.0291186, 0.989574)
 bones/4/rotation = Quaternion(0.838594, 0.204833, -0.139547, 0.485108)
-bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.00832769, 0.151386, 0.921188, 0.358364)
+bones/5/rotation = Quaternion(-0.012498, 0.148116, 0.909519, 0.388177)
 bones/6/rotation = Quaternion(0.128241, 0.0587322, 0.0291186, 0.989574)
 bones/7/rotation = Quaternion(0.838594, -0.204833, 0.139547, 0.485108)
-bones/7/scale = Vector3(1, 1, 1)
 bones/8/rotation = Quaternion(0.707107, -6.04412e-08, -0.707107, -6.04411e-08)
 bones/9/rotation = Quaternion(0.707107, 6.04412e-08, 0.707107, -6.04411e-08)
 
 [node name="boob_l" parent="waria/Armature/Skeleton3D" index="18"]
-transform = Transform3D(0.872074, 0.488996, -0.0192303, 0.178153, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156625, -1.03197, 0.17775)
+transform = Transform3D(0.872074, 0.488996, -0.0192301, 0.178153, -0.353825, -0.918188, -0.455794, 0.797302, -0.395678, 0.156626, -1.01393, 0.177751)
 
 [node name="boob_r" parent="waria/Armature/Skeleton3D" index="19"]
-transform = Transform3D(0.872074, -0.488996, 0.0192301, -0.178153, -0.353826, -0.918187, 0.455794, 0.797302, -0.395678, -0.156625, -1.03197, 0.17775)
+transform = Transform3D(0.872074, -0.488996, 0.01923, -0.178153, -0.353826, -0.918188, 0.455794, 0.797302, -0.395678, -0.156626, -1.01393, 0.177751)
 
 [node name="AnimationTree" parent="waria" index="2"]
 libraries = {
