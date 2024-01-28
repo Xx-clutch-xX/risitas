@@ -59,4 +59,5 @@ func stop_talk():
 	transition_to("Idle", {from_talk=true})
 
 func fractura():
+	owner.pisadas.stop()
 	transition_to("Fractura")

@@ -3,6 +3,7 @@ extends State
 
 func enter(msg := {}) -> void:
 	owner._anim_tree.set("parameters/StateMachine/conditions/running", true)
+	owner.pisadas.play()
 	pass
 
 func physics_update(delta):
@@ -20,12 +21,14 @@ func physics_update(delta):
 	if is_jumping:
 		owner._anim_tree.set("parameters/StateMachine/conditions/running", false)
 		state_machine.transition_to("Jump")
+		owner.pisadas.stop()
 	
 	owner.move_and_slide()
 	
 	if owner.velocity.length() == 0:
 		owner._anim_tree.set("parameters/StateMachine/conditions/running", false)
 		state_machine.transition_to("Idle")
+		owner.pisadas.stop()
 	
 	var look_direction = Vector2(owner.velocity.z, owner.velocity.x)
 	

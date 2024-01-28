@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba3hriud2d4if"]
+[gd_scene load_steps=22 format=3 uid="uid://ba3hriud2d4if"]
 
 [ext_resource type="Script" path="res://Scripts/abuelita_controller.gd" id="1_qc7l4"]
 [ext_resource type="PackedScene" uid="uid://bq0hkjb5cfmuk" path="res://Scenes/waria.tscn" id="2_pjh17"]
@@ -10,12 +10,15 @@
 [ext_resource type="Script" path="res://Scripts/Jump.gd" id="8_j2irw"]
 [ext_resource type="Script" path="res://Scripts/Talk.gd" id="9_tgdel"]
 [ext_resource type="Script" path="res://Scripts/Fractura.gd" id="10_61ia0"]
+[ext_resource type="AudioStream" uid="uid://jxlo811lls23" path="res://Assets/Audio/fx/Pisadas.wav" id="11_m3g4o"]
+[ext_resource type="AudioStream" uid="uid://kd2dd7uu5q2k" path="res://Assets/Audio/fx/resbalonFractura1.wav" id="12_2sa5b"]
+[ext_resource type="AudioStream" uid="uid://ds6hlrbgwfhf4" path="res://Assets/Audio/fx/salto2.wav" id="13_k8ql4"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qqsux"]
 height = 1.26863
 radius = 0.222202
 
-[sub_resource type="Animation" id="Animation_ruysg"]
+[sub_resource type="Animation" id="Animation_8mctl"]
 resource_name = "default"
 length = 0.0416667
 tracks/0/type = "position_3d"
@@ -124,7 +127,7 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, -1.10579e-08, -1.82817e-07, 0.00185375, 0.999998)
 
-[sub_resource type="Animation" id="Animation_siyyw"]
+[sub_resource type="Animation" id="Animation_oygkj"]
 resource_name = "fractura"
 length = 0.458333
 tracks/0/type = "position_3d"
@@ -233,7 +236,7 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, -1.10579e-08, -1.82817e-07, 0.00185375, 0.999998)
 
-[sub_resource type="Animation" id="Animation_lhm6u"]
+[sub_resource type="Animation" id="Animation_pi6qh"]
 resource_name = "jump"
 length = 0.958333
 tracks/0/type = "position_3d"
@@ -342,7 +345,7 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, -0.707107, -6.04412e-08, -0.707107, 6.04411e-08, 0.0333333, 1, -0.704486, -0.00732031, -0.709084, -0.0290834, 0.0666667, 1, 0.697684, 0.0213054, 0.711069, 0.0846465, 0.1, 1, 0.686891, 0.0374243, 0.710402, 0.148687, 0.133333, 1, 0.675107, 0.0511981, 0.707272, 0.203411, 0.166667, 1, 0.668052, 0.0583302, 0.704697, 0.231747, 0.233333, 1, 0.702574, 0.0117768, 0.709973, 0.0467893, 0.266667, 1, -0.707107, -6.04412e-08, -0.707107, 6.04411e-08, 0.958333, 1, -0.707107, -6.04412e-08, -0.707107, 6.04411e-08)
 
-[sub_resource type="Animation" id="Animation_vc2r2"]
+[sub_resource type="Animation" id="Animation_w3bk1"]
 resource_name = "idle_loop"
 length = 2.29167
 loop_mode = 1
@@ -452,7 +455,7 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, 0.838594, -0.204833, 0.139547, 0.485108)
 
-[sub_resource type="Animation" id="Animation_kqhog"]
+[sub_resource type="Animation" id="Animation_1alit"]
 resource_name = "running_loop"
 loop_mode = 1
 tracks/0/type = "position_3d"
@@ -561,25 +564,28 @@ tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, 0.838594, -0.204833, 0.139547, 0.485108)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tkung"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6h0on"]
 _data = {
-"default": SubResource("Animation_ruysg"),
-"fractura": SubResource("Animation_siyyw"),
-"idle": SubResource("Animation_vc2r2"),
-"jump": SubResource("Animation_lhm6u"),
-"running": SubResource("Animation_kqhog")
+"default": SubResource("Animation_8mctl"),
+"fractura": SubResource("Animation_oygkj"),
+"idle": SubResource("Animation_w3bk1"),
+"jump": SubResource("Animation_pi6qh"),
+"running": SubResource("Animation_1alit")
 }
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wwp4b"]
 material = ExtResource("4_utmeo")
 
-[node name="AbuelitaController" type="CharacterBody3D" node_paths=PackedStringArray("_model", "_spring_arm", "_anim_tree")]
+[node name="AbuelitaController" type="CharacterBody3D" node_paths=PackedStringArray("_model", "_spring_arm", "_anim_tree", "pisadas", "fractura", "salto")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_qc7l4")
 _model = NodePath("waria")
 _spring_arm = NodePath("CameraJoint")
 _anim_tree = NodePath("waria/AnimationTree")
+pisadas = NodePath("pisadas")
+fractura = NodePath("fractura")
+salto = NodePath("salto")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.304095, -0.0649261)
@@ -608,7 +614,7 @@ transform = Transform3D(0.872074, -0.488996, 0.01923, -0.178153, -0.353826, -0.9
 
 [node name="AnimationTree" parent="waria" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_tkung")
+"": SubResource("AnimationLibrary_6h0on")
 }
 
 [node name="CameraJoint" type="SpringArm3D" parent="."]
@@ -642,5 +648,14 @@ script = ExtResource("9_tgdel")
 
 [node name="Fractura" type="Node" parent="StateMachine"]
 script = ExtResource("10_61ia0")
+
+[node name="pisadas" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_m3g4o")
+
+[node name="fractura" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_2sa5b")
+
+[node name="salto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_k8ql4")
 
 [editable path="waria"]
