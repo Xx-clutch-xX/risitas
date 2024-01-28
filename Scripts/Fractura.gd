@@ -8,6 +8,7 @@ func enter(msg := {}) -> void:
 	owner._anim_tree.set("parameters/StateMachine/conditions/idle", false)
 	owner._anim_tree.set("parameters/StateMachine/conditions/fractura", true)
 	owner._spring_arm.cam_zoom_in()
+	owner.fractura.play()
 
 func physics_update(delta):
 	pass

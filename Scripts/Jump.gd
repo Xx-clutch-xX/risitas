@@ -2,6 +2,7 @@
 extends State
 
 func enter(msg := {}) -> void:
+	owner.salto.play()
 	owner._anim_tree.set("parameters/StateMachine/conditions/jump", true)
 	owner.velocity.y = owner.jump_strength
 	owner.velocity.x = owner.velocity.x * owner.jump_distance

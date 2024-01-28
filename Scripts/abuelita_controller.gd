@@ -9,6 +9,9 @@ extends CharacterBody3D
 @export var _model: Node3D
 @export var _spring_arm: SpringArm3D
 @export var _anim_tree: AnimationTree
+@export var pisadas: AudioStreamPlayer
+@export var fractura: AudioStreamPlayer
+@export var salto: AudioStreamPlayer
 
 var _snap_vector := Vector3.DOWN
 var talking = false
