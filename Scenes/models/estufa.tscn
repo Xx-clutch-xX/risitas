@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcv2xb8nplns4"]
+
+[ext_resource type="PackedScene" uid="uid://b24h8scvtk0rt" path="res://Assets/3D/models/estufa.glb" id="1_e3qsf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd2e5"]
+size = Vector3(0.686584, 0.658203, 0.651855)
+
+[node name="Estufa" instance=ExtResource("1_e3qsf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0140686, 0.323761, 0.00366211)
+shape = SubResource("BoxShape3D_nd2e5")

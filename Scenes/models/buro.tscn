@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc88catbgokhn"]
+
+[ext_resource type="PackedScene" uid="uid://b01chwaoioyyy" path="res://Assets/3D/models/buro.glb" id="1_c72qa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvxpt"]
+size = Vector3(0.297729, 0.340851, 0.297852)
+
+[node name="buro" instance=ExtResource("1_c72qa")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010376, 0.163437, -0.00146484)
+shape = SubResource("BoxShape3D_mvxpt")

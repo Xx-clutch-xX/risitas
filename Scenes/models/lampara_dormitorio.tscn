@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4q7bvb6f5124"]
+
+[ext_resource type="PackedScene" uid="uid://dr7sr02n4ci7t" path="res://Assets/3D/models/lamparaDormitorio.glb" id="1_6ndwt"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sy68m"]
+height = 0.242644
+radius = 0.0870139
+
+[node name="lampara_dormitorio" instance=ExtResource("1_6ndwt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113446, 0)
+shape = SubResource("CylinderShape3D_sy68m")

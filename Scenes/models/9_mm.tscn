@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciuwaqbubba4x"]
+
+[ext_resource type="PackedScene" uid="uid://bocbidgp6ik74" path="res://Assets/3D/models/9mm.glb" id="1_i6psg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqqsh"]
+size = Vector3(0.242188, 0.555908, 0.803345)
+
+[node name="9mm" instance=ExtResource("1_i6psg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199341, 0.123474)
+shape = SubResource("BoxShape3D_jqqsh")
