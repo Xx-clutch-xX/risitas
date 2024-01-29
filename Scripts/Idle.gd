@@ -9,6 +9,7 @@ func enter(_msg := {}) -> void:
 	
 	zoom_out = false
 	if _msg.has("from_talk"):
+		owner._anim_tree.set("parameters/StateMachine/conditions/recolecta", false)
 		await owner._spring_arm.cam_zoom_out()
 	else:
 		zoom_out = true

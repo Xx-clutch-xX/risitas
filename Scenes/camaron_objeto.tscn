@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dobn8pxjogydc"]
+
+[ext_resource type="PackedScene" uid="uid://b3hm07f78wry3" path="res://Assets/3D/camaron.glb" id="1_wcewf"]
+
+[node name="camaron_objeto" instance=ExtResource("1_wcewf")]

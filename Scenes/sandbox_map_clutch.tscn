@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbtnfdsucfpo2"]
+[gd_scene load_steps=10 format=3 uid="uid://bbtnfdsucfpo2"]
 
 [ext_resource type="PackedScene" uid="uid://ba3hriud2d4if" path="res://Scenes/abuelita_controller.tscn" id="1_k8l5f"]
 [ext_resource type="PackedScene" uid="uid://bwr8yuabk7c82" path="res://Scenes/escenario_completo_a.tscn" id="1_q8q7v"]
 [ext_resource type="PackedScene" uid="uid://bd3loqo1mp8n" path="res://Scenes/talking_element.tscn" id="2_brpah"]
+[ext_resource type="PackedScene" uid="uid://buqutkuu61j0b" path="res://Scenes/camaron.tscn" id="5_hhki4"]
 [ext_resource type="PackedScene" uid="uid://dxv01sofsh45v" path="res://Scenes/cascara.tscn" id="5_mengn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jxugv"]
@@ -22,7 +23,7 @@ sky = SubResource("Sky_nrg5n")
 [node name="escenario_completo_a" parent="." instance=ExtResource("1_q8q7v")]
 
 [node name="AbuelitaController" parent="." instance=ExtResource("1_k8l5f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60766, 1.76593, -31.1176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51838, 1.76593, -0.391352)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_3prbn")
@@ -33,7 +34,6 @@ light_cull_mask = 4294967293
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.88581)
-visible = false
 
 [node name="TalkingElement" parent="Node3D" instance=ExtResource("2_brpah")]
 
@@ -41,4 +41,15 @@ visible = false
 mesh = SubResource("BoxMesh_ajuvf")
 
 [node name="Cascara" parent="." instance=ExtResource("5_mengn")]
-transform = Transform3D(0.244487, 0, 0, 0, 0.139863, 0, 0, 0, 0.302972, 0.395288, 0.5, 2.39871)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.493642, 0)
+
+[node name="Camarones" type="Node3D" parent="."]
+
+[node name="Camaron" parent="Camarones" instance=ExtResource("5_hhki4")]
+transform = Transform3D(0.721688, 0, 0.692219, 0, 1, 0, -0.692219, 0, 0.721688, 10.4012, 0.580636, -38.8068)
+
+[node name="Camaron2" parent="Camarones" instance=ExtResource("5_hhki4")]
+transform = Transform3D(0.330778, 0, 0.943709, 0, 1, 0, -0.943709, 0, 0.330778, -8.13317, 2.77528, -33.7627)
+
+[node name="Camaron3" parent="Camarones" instance=ExtResource("5_hhki4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5256, 1.08438, -53.2175)

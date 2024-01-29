@@ -18,6 +18,7 @@ func _ready() -> void:
 	Events.connect("startTalking", start_talk)
 	Events.connect("stopTalking", stop_talk)
 	Events.connect("fractura", fractura)
+	Events.connect("receivedItem", received_item)
 	# The state machine assigns itself to the State objects' state_machine property.
 	for child in get_children():
 		child.state_machine = self
@@ -53,6 +54,7 @@ func transition_to(target_state_name: String, msg: Dictionary = {}) -> void:
 	emit_signal("transitioned", state.name)
 
 func start_talk():
+	owner.pisadas.stop()
 	transition_to("Talk")
 
 func stop_talk():
@@ -61,3 +63,7 @@ func stop_talk():
 func fractura():
 	owner.pisadas.stop()
 	transition_to("Fractura")
+
+func received_item(_item_name):
+	owner.pisadas.stop()
+	transition_to("Recolecta", {_item = _item_name})

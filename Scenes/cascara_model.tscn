@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://xhs0rbdad7yv"]
+
+[ext_resource type="PackedScene" uid="uid://bfjdisv3narbx" path="res://Assets/3D/cascara.glb" id="1_7buyb"]
+
+[node name="cascara_model" instance=ExtResource("1_7buyb")]

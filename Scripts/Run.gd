@@ -2,6 +2,7 @@
 extends State
 
 func enter(msg := {}) -> void:
+	owner._anim_tree.set("parameters/StateMachine/conditions/recolecta", false)
 	owner._anim_tree.set("parameters/StateMachine/conditions/running", true)
 	owner.pisadas.play()
 	pass

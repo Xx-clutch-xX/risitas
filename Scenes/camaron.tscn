@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://buqutkuu61j0b"]
+
+[ext_resource type="Script" path="res://Scripts/camaron.gd" id="1_lirt7"]
+[ext_resource type="PackedScene" uid="uid://dobn8pxjogydc" path="res://Scenes/camaron_objeto.tscn" id="2_6o78a"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wwd4n"]
+height = 1.20479
+radius = 0.811852
+
+[node name="Camaron" type="Node3D"]
+script = ExtResource("1_lirt7")
+
+[node name="camaron_objeto" parent="." instance=ExtResource("2_6o78a")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_wwd4n")

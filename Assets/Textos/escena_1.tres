@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TextArrResource" load_steps=2 format=3 uid="uid://bpobdtuxpjrq3"]
+
+[ext_resource type="Script" path="res://Scripts/TextArrResource.gd" id="1_elh5e"]
+
+[resource]
+script = ExtResource("1_elh5e")
+key_names = Array[String](["escena_1_1", "escena_1_2", "escena_1_3", "escena_1_4"])
+character_name = ""
