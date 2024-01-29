@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnmiheom1h6hw"]
+
+[ext_resource type="PackedScene" uid="uid://7mqhaw7mnemd" path="res://Assets/3D/models/moneda.glb" id="1_krsqc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_viux3"]
+height = 0.0269144
+radius = 0.067054
+
+[node name="moneda" instance=ExtResource("1_krsqc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00696061, 0)
+shape = SubResource("CylinderShape3D_viux3")

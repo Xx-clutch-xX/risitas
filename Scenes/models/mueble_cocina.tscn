@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsgyu60txuqva"]
+
+[ext_resource type="PackedScene" uid="uid://cdck62m7fr5jf" path="res://Assets/3D/models/muebleCocina1.glb" id="1_tatdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6nqd"]
+size = Vector3(0.688904, 0.659668, 0.663086)
+
+[node name="mueble_cocina" instance=ExtResource("1_tatdu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0154724, 0.314075, 0.00244141)
+shape = SubResource("BoxShape3D_s6nqd")

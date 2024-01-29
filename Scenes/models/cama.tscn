@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7c4gmmms44l1"]
+
+[ext_resource type="PackedScene" uid="uid://5dkfp8fdmtvg" path="res://Assets/3D/models/cama.glb" id="1_v1qnu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1evqr"]
+size = Vector3(0.640625, 0.482178, 1.32434)
+
+[node name="Cama" instance=ExtResource("1_v1qnu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000976563, 0.236694, -0.0297241)
+shape = SubResource("BoxShape3D_1evqr")

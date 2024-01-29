@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://uoyb8ko4vyfw"]
+
+[ext_resource type="PackedScene" uid="uid://dw1ggtxq08xh8" path="res://Assets/3D/models/cuchillo.glb" id="1_y4gec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bpal"]
+size = Vector3(1.48425, 0.541626, 0.0893555)
+
+[node name="cuchillo" instance=ExtResource("1_y4gec")]
+
+[node name="cuboid" parent="Node" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106242, 0, 0.148256)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116475, 0.253723, -0.011168)
+shape = SubResource("BoxShape3D_4bpal")
