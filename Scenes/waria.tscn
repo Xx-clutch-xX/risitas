@@ -881,7 +881,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(3, -9)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_av72c"]
-graph_offset = Vector2(-215.991, 72.4617)
+graph_offset = Vector2(-114.763, 108.53)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_ygpyk")
 nodes/StateMachine/position = Vector2(80, 160)
 node_connections = [&"output", 0, &"StateMachine"]
@@ -889,14 +889,14 @@ node_connections = [&"output", 0, &"StateMachine"]
 [node name="waria" instance=ExtResource("1_uq3al")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/0/position = Vector3(-2.25009e-11, 0.483925, -0.139333)
-bones/1/rotation = Quaternion(-0.153487, 2.0451e-11, -3.64963e-08, 0.988151)
-bones/2/rotation = Quaternion(-0.00832137, -0.151391, -0.921205, 0.35832)
+bones/0/position = Vector3(-2.56848e-10, 0.487238, -0.139333)
+bones/1/rotation = Quaternion(-0.160605, 3.72287e-10, -3.65121e-08, 0.987019)
+bones/2/rotation = Quaternion(-0.00912765, -0.150772, -0.919026, 0.364109)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/rotation = Quaternion(0.128241, -0.0587322, -0.0291186, 0.989574)
 bones/4/rotation = Quaternion(0.838594, 0.204833, -0.139547, 0.485108)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.00832157, 0.151391, 0.921205, 0.35832)
+bones/5/rotation = Quaternion(-0.00913169, 0.150769, 0.919016, 0.364136)
 bones/6/rotation = Quaternion(0.128241, 0.0587322, 0.0291186, 0.989574)
 bones/7/rotation = Quaternion(0.838594, -0.204833, 0.139547, 0.485108)
 bones/7/scale = Vector3(1, 1, 1)
@@ -905,7 +905,7 @@ bones/9/rotation = Quaternion(0.707107, 6.04412e-08, 0.707107, -6.04411e-08)
 bones/10/scale = Vector3(0.296799, 0.296799, 0.296799)
 
 [node name="boob_l" type="Node3D" parent="Armature/Skeleton3D" index="18"]
-transform = Transform3D(0.872074, 0.488996, -0.0192302, 0.178153, -0.353826, -0.918188, -0.455794, 0.797302, -0.395678, 0.156625, -0.089341, 0.17775)
+transform = Transform3D(0.872074, 0.488996, -0.0192302, 0.178153, -0.353825, -0.918188, -0.455794, 0.797302, -0.395678, 0.156625, -0.0865148, 0.177751)
 top_level = true
 script = ExtResource("2_bp1ag")
 bone_name = "Boob.L"
@@ -914,7 +914,7 @@ use_gravity = true
 forward_axis = 2
 
 [node name="boob_r" type="Node3D" parent="Armature/Skeleton3D" index="19"]
-transform = Transform3D(0.872074, -0.488996, 0.01923, -0.178153, -0.353826, -0.918188, 0.455794, 0.797302, -0.395678, -0.156626, -0.089341, 0.17775)
+transform = Transform3D(0.872074, -0.488996, 0.01923, -0.178153, -0.353826, -0.918188, 0.455794, 0.797302, -0.395678, -0.156626, -0.0865147, 0.17775)
 top_level = true
 script = ExtResource("2_bp1ag")
 bone_name = "Boob.R"

@@ -13,6 +13,8 @@ script = ExtResource("1_lirt7")
 [node name="camaron_objeto" parent="." instance=ExtResource("2_6o78a")]
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_wwd4n")

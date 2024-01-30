@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://jk6cq5k15mkv"]
+
+[ext_resource type="Script" path="res://Scripts/EscenaHistoria.gd" id="1_apdky"]
+[ext_resource type="Resource" uid="uid://co57ix0w1500r" path="res://Assets/Textos/escena_4.tres" id="2_etmrm"]
+[ext_resource type="PackedScene" uid="uid://bbtnfdsucfpo2" path="res://Scenes/sandbox_map_clutch.tscn" id="2_woa7d"]
+[ext_resource type="Texture2D" uid="uid://c0wgu345xgdnb" path="res://Assets/Imagenes/Historia/4_1.png" id="3_b5kp8"]
+[ext_resource type="Texture2D" uid="uid://7mfdec1e0v5n" path="res://Assets/Imagenes/Historia/4_2.png" id="4_hkbnf"]
+[ext_resource type="Texture2D" uid="uid://c4sxq8yhajx6p" path="res://Assets/Imagenes/Historia/4_3.png" id="5_lubyr"]
+[ext_resource type="Texture2D" uid="uid://dfqy3osxayyld" path="res://Assets/Imagenes/Historia/4_4.png" id="6_w1aip"]
+[ext_resource type="Texture2D" uid="uid://cb70icjygxmxm" path="res://Assets/Imagenes/Historia/4_5.png" id="7_qop11"]
+[ext_resource type="Texture2D" uid="uid://bxcvwxrvijt83" path="res://Assets/Imagenes/Historia/4_6.png" id="8_rhks3"]
+[ext_resource type="Texture2D" uid="uid://dwwn7ryd51mtc" path="res://Assets/Imagenes/Historia/4_7.png" id="9_2ihq5"]
+[ext_resource type="Texture2D" uid="uid://frjhixmeed6r" path="res://Assets/Imagenes/Historia/4_8.png" id="10_4dhna"]
+[ext_resource type="Texture2D" uid="uid://c74wkaaw0evxu" path="res://Assets/Imagenes/Historia/4_9.png" id="11_ghaeo"]
+[ext_resource type="PackedScene" uid="uid://7isc57pdwcfv" path="res://Scenes/textos_escenas.tscn" id="12_nm81l"]
+
+[node name="EscenaFinal" type="Control" node_paths=PackedStringArray("cuadros")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_apdky")
+textos_inicio = ExtResource("2_etmrm")
+cuadros = [NodePath("TextureRect"), NodePath("TextureRect2"), NodePath("TextureRect3"), NodePath("TextureRect4"), NodePath("TextureRect5"), NodePath("TextureRect6"), NodePath("TextureRect7"), NodePath("TextureRect8"), NodePath("TextureRect9")]
+next_scene = ExtResource("2_woa7d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_b5kp8")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hkbnf")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_lubyr")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_w1aip")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_qop11")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_rhks3")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_2ihq5")
+
+[node name="TextureRect8" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_4dhna")
+
+[node name="TextureRect9" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_ghaeo")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -572.0
+offset_top = -386.0
+offset_right = 572.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.231373)
+
+[node name="TextosEscenas" parent="Control" instance=ExtResource("12_nm81l")]
+layout_mode = 1
+offset_left = -479.0
+offset_top = -309.0
+offset_right = 480.0
+offset_bottom = -178.0

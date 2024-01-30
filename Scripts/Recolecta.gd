@@ -4,6 +4,7 @@ extends State
 func enter(msg := {}) -> void:
 	owner.velocity = Vector3.ZERO
 	if msg.has("_item"):
+		print(msg._item)
 		Events.emit_signal("objetoRecibido", msg._item)
 	else:
 		print('no objeto')

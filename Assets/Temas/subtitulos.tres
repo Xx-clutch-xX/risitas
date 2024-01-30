@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bgh2a4qs0q5rj"]
+
+[ext_resource type="FontFile" uid="uid://duyfdmdg1obct" path="res://Assets/Fuentes/Capriola-Regular.ttf" id="1_pfrps"]
+
+[resource]
+Fonts/fonts/normal = ExtResource("1_pfrps")
+RichTextLabel/colors/default_color = Color(0.847059, 0.847059, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 12
+RichTextLabel/font_sizes/normal_font_size = 52
+RichTextLabel/fonts/normal_font = ExtResource("1_pfrps")
