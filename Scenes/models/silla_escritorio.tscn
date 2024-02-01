@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpgoaqdn74nmd"]
+
+[ext_resource type="PackedScene" uid="uid://b0g0opsl3ykcy" path="res://Assets/3D/models/silla_escritorio.glb" id="1_ttc46"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ymia2"]
+size = Vector3(0.735474, 0.859497, 0.731812)
+
+[node name="silla_escritorio" instance=ExtResource("1_ttc46")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00189209, 0.403773, -0.00421143)
+shape = SubResource("BoxShape3D_ymia2")
